@@ -18,3 +18,13 @@ while True:
         print("Error: Stock quantity cannot be negative.")
         failed_entries += 1
         continue
+
+    inventory += entry
+
+    if inventory > 500:
+        print("ALERT: Inventory exceeds 500 units!")
+        break
+
+print("\n--- Inventory Report ---")
+print("Total Units Processed:", inventory)
+print("Number of Failed/Rejected Entries:", failed_entries)
