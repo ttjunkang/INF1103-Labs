@@ -25,20 +25,38 @@ def calculate_tax(amount):
 def process_delivery(current_total, new_value):
     return current_total + new_value
 
+
 def generate_report(total_units, failed_attempts):
     print("\n--- Inventory Report ---")
     print("Total Deliveries Processed:", total_units)
     print("Number of Failed/Rejected Entries:", failed_attempts)
 
-# Quick test
+
+def main():
+    total_inventory = 0
+    total_deliveries_processed = 0
+    failed_entries = 0
+
+    while True:
+        result = get_valid_input()
+
+        if result == "quit":
+            break
+
+        if result is None:
+            failed_entries += 1
+            continue
+
+        quantity = result
+
+        total_inventory = process_delivery(total_inventory, quantity)
+        tax = calculate_tax(quantity)
+        total_deliveries_processed += 1
+
+        print(f"Accepted: +{quantity} units (tax: {tax}). Current inventory: {total_inventory}")
+
+    generate_report(total_deliveries_processed, failed_entries)
+
+
 if __name__ == "__main__":
-    result = get_valid_input()
-    print("You got back:", result)
-
-    tax = calculate_tax(100)
-    print("Tax on 100:", tax)
-
-    new_total = process_delivery(50, 20)
-    print("New total after adding 20 to 50:", new_total)
-
-    generate_report(5, 2)
+    main()
