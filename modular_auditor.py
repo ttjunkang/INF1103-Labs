@@ -1,11 +1,11 @@
-"""
-Modular Inventory Auditor
---------------------------
-Week 3 refactor of auditor.py. Same behaviour as before, but the logic is now
-split into small, "pure" functions: each one takes input as parameters and
-returns a result, instead of directly reading/writing variables that live
-outside the function (global state). This makes each piece independently
-testable and easy to extend later (e.g. adding discounts).
-"""
-
-inventory = 0
+def get_valid_input():
+    """
+    Handles the prompt AND input validation.
+ 
+    Takes: nothing.
+    Returns:
+        - an int, if the user entered a valid non-negative whole number
+        - the string "quit", if the user wants to stop
+        - None, if the entry was invalid (not a number, or negative)
+          -- the caller decides what to do with an invalid entry.
+    """
