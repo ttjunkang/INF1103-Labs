@@ -16,9 +16,14 @@ def get_valid_input():
 
     return entry
 
+
 def calculate_tax(amount):
     tax_rate = 0.10
     return amount * tax_rate
+
+
+def process_delivery(current_total, new_value):
+    return current_total + new_value
 
 
 # Quick test
@@ -28,3 +33,6 @@ if __name__ == "__main__":
 
     tax = calculate_tax(100)
     print("Tax on 100:", tax)
+
+    new_total = process_delivery(50, 20)
+    print("New total after adding 20 to 50:", new_total)
