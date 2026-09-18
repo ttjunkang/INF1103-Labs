@@ -16,8 +16,15 @@ def get_valid_input():
 
     return entry
 
+def calculate_tax(amount):
+    tax_rate = 0.10
+    return amount * tax_rate
 
-# Quick test - call it once and see what comes back
+
+# Quick test
 if __name__ == "__main__":
     result = get_valid_input()
     print("You got back:", result)
+
+    tax = calculate_tax(100)
+    print("Tax on 100:", tax)
