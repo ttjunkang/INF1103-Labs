@@ -8,13 +8,13 @@ def get_valid_input():
         print("Error: Invalid input. Please enter a whole number.")
         return None
 
-    entry = int(entry)
+    quantity = int(entry)
 
-    if entry < 0:
+    if quantity < 0:
         print("Error: Stock quantity cannot be negative.")
         return None
 
-    return entry
+    return quantity
 
 
 def calculate_tax(amount):
@@ -36,6 +36,8 @@ def main():
     total_inventory = 0
     total_deliveries_processed = 0
     failed_entries = 0
+    total_tax_collected = 0.0
+
 
     while True:
         result = get_valid_input()
@@ -50,12 +52,17 @@ def main():
         quantity = result
 
         total_inventory = process_delivery(total_inventory, quantity)
-        tax = calculate_tax(quantity)
+        tax_for_this_delivery = calculate_tax(quantity)
+        total_tax_collected += tax_for_this_delivery
         total_deliveries_processed += 1
 
-        print(f"Accepted: +{quantity} units (tax: {tax}). Current inventory: {total_inventory}")
+        print(
+            f"Accepted: +{quantity} units (tax: {tax_for_this_delivery:.2f}). "
+            f"Current inventory: {total_inventory}"
+        )
 
     generate_report(total_deliveries_processed, failed_entries)
+    print(f"Total Tax Collected: {total_tax_collected:.2f}")
 
 
 if __name__ == "__main__":
