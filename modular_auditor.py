@@ -25,6 +25,10 @@ def calculate_tax(amount):
 def process_delivery(current_total, new_value):
     return current_total + new_value
 
+def generate_report(total_units, failed_attempts):
+    print("\n--- Inventory Report ---")
+    print("Total Deliveries Processed:", total_units)
+    print("Number of Failed/Rejected Entries:", failed_attempts)
 
 # Quick test
 if __name__ == "__main__":
@@ -36,3 +40,5 @@ if __name__ == "__main__":
 
     new_total = process_delivery(50, 20)
     print("New total after adding 20 to 50:", new_total)
+
+    generate_report(5, 2)
