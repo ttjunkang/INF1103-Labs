@@ -1,26 +1,29 @@
-INVENTORY_FILE = "inventory.txt"
+import os
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+INVENTORY_FILE = os.path.join(SCRIPT_DIR, "inventory.txt")
 
 def load_inventory(filename):
     total = 0
-    history = []
+    transaction_history = []
 
-    try:
-        with open(filename, "r") as f:
-            for line in f:
-                line = line.strip()
-                if line.startswith("TOTAL:"):
-                    total = int(line.replace("TOTAL:", ""))
-                elif line.startswith("HISTORY:"):
-                    raw = line.replace("HISTORY:", "")
-                    if raw:
-                        history = [int(x) for x in raw.split(",")]
-
-    except FileNotFoundError:
+    if not os.path.exists(filename):
         print(f"No existing '{filename}' found. Starting with a fresh inventory.")
-        total = 0
-        history = []
-
-    return total, history
+        return total, transaction_history
+ 
+    with open(filename, "r") as file:
+        lines = file.readlines()
+ 
+    for line in lines:
+        line = line.strip()
+        if line.startswith("TOTAL:"):
+            total = int(line.replace("TOTAL:", ""))
+        elif line.startswith("HISTORY:"):
+            raw_values = line.replace("HISTORY:", "")
+            if raw_values:  # guard against an empty history line
+                transaction_history = [int(value) for value in raw_values.split(",")]
+ 
+    return total, transaction_history
 
 def get_valid_input():
     entry = input("Enter stock quantity (or 'quit' to finish): ")
@@ -79,6 +82,8 @@ def main():
             continue
 
         quantity = result
+
+        transaction_history.append(quantity)   # <-- new line     
 
         total_inventory = process_delivery(total_inventory, quantity)
         tax_for_this_delivery = calculate_tax(quantity)
