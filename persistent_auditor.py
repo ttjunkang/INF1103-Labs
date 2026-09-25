@@ -57,7 +57,12 @@ def generate_report(total_units, failed_attempts):
 
 
 def main():
-    total_inventory = 0
+    total_inventory, transaction_history = load_inventory(INVENTORY_FILE)
+
+    print("=== Persistent Auditor ===")
+    print(f"Loaded inventory: {total_inventory}")
+    print(f"Loaded history: {transaction_history}\n")
+    
     total_deliveries_processed = 0
     failed_entries = 0
     total_tax_collected = 0.0
