@@ -17,7 +17,7 @@ def load_inventory(filename):
 
     except FileNotFoundError:
         print(f"No existing '{filename}' found. Starting with a fresh inventory.")
-        total = 1
+        total = 0
         history = []
 
     return total, history
