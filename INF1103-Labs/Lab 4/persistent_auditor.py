@@ -34,6 +34,7 @@ def generate_report(total_units, failed_attempts):
     print("Total Deliveries Processed:", total_units)
     print("Number of Failed/Rejected Entries:", failed_attempts)
 
+
 def load_inventory():
     total_inventory = 0
     total_tax_collected = 0.0
@@ -70,11 +71,9 @@ def load_inventory():
  
     return total_inventory, total_tax_collected, history
 
+
 def save_inventory(total_inventory, total_tax_collected, history):
-    """
-    Writes the final running total, total tax collected, and the
-    full transaction history list back to INVENTORY_FILE.
-    """
+
     with open(INVENTORY_FILE, "w") as f:
         f.write("[TOTAL_INVENTORY]\n")
         f.write(f"{total_inventory}\n")

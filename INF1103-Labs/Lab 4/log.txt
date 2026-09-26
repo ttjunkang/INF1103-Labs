@@ -1,0 +1,291 @@
+commit b47ae61277abb1b5239f33287ac425a5813d7f03
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 18:42:47 2026 +0800
+
+    final output
+
+commit 86e8ae2cc58c87e07a6e8a31764bbc25e5752820
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 18:35:07 2026 +0800
+
+    Update load_inventory() and save_inventory()
+
+commit 0d08e6415b562a7b2a6b51c763c2decfe9d3c5ba
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 15:25:59 2026 +0800
+
+    Track transaction history with a list on every valid entry
+
+commit 589d110dfcbd839a433284fa37afe0c18465005b
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 12:06:46 2026 +0800
+
+    inventory.txt added
+
+commit 957690adc617d19ea9d0bebadd0f4f0b6350b6ff
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 12:04:51 2026 +0800
+
+    convert Lab 3 from submodule to regular folder
+
+commit 31ed85d1b4fccb7dbbcaab0c7692b1c4c8b0cf9a
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 11:53:09 2026 +0800
+
+    test 8
+
+commit 1b4fd51f3aa672307624115be0bea9a7a2ea0ad9
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 11:48:59 2026 +0800
+
+    test7
+
+commit 12a11afd8fb54a8ad8ac66ddc6f74a19464a05bb
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 11:46:14 2026 +0800
+
+    test 6
+
+commit 2414bc06bf08fb06cdb38b63d4da7a071052f596
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 11:44:28 2026 +0800
+
+    test 5
+
+commit 7bf01d2270a33a97130a814b474badf07f52b88e
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 11:41:24 2026 +0800
+
+    Delete INF1103-Labs/Lab 6 directory
+
+commit 378ad5e421f6a658669973d605b51d5abcd99b21
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 11:41:14 2026 +0800
+
+    Delete INF1103-Labs/Lab 5 directory
+
+commit 95074872858272da19fdedf1b90a3a7bc21cf701
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 11:40:40 2026 +0800
+
+    test4
+
+commit d6fa462dfdfd556cb5991b52669b412e96d95230
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 11:39:03 2026 +0800
+
+    Delete INF1103-Labs/t.txt
+
+commit 475409d78485487f7891c06e8e157f8341722390
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 11:38:39 2026 +0800
+
+    test3
+
+commit cbd729d7f8ed98464d5fb1ae1d3ba9b67f61ce23
+Merge: 7c162d6 a3341a9
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 11:37:32 2026 +0800
+
+    Test3
+
+commit 7c162d61dded4f5a035c8f58c379c8bb7d9412fa
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 11:34:42 2026 +0800
+
+    test3
+
+commit a3341a958ebc0688dd80bfebacc91c2c4202c7bc
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 11:33:39 2026 +0800
+
+    Delete persistent_auditor.py
+
+commit f0c93d5107b934e752ce0d2a7b444560ad993110
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 11:31:55 2026 +0800
+
+    test2
+
+commit c22231ee3b4ccd04d9dc4bbe68882c03ba303708
+Merge: fb4fed7 66e1640
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 11:28:23 2026 +0800
+
+    merge remote and local
+
+commit fb4fed7cd42e5759bf4bebb5125310fd0baedc80
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 11:25:24 2026 +0800
+
+    Check version 2
+
+commit 66e1640fed17185a0d28be92be6c14079e5f210e
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 11:24:11 2026 +0800
+
+    Check version
+
+commit 060210f38245d75aa3f73c87780033b468ac3886
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 09:38:55 2026 +0800
+
+    Loading saved state into two variables
+
+commit c3c26e015351ded56285fd68af56dd31ae125acc
+Merge: b484c03 78f4b2b
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 09:29:10 2026 +0800
+
+    load_inventiory() update
+
+commit b484c0386e0a7d42b6b9a479e371af090bb6437e
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 00:54:11 2026 +0800
+
+    load_inventory() function
+
+commit 5b460afaaa55c837a281e9dd8f8d1d14030838a8
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 25 00:37:28 2026 +0800
+
+    Persistent_auditor.py Starting Point
+
+commit 78f4b2bca4f85a2695beadfc1dc911dd2be78cd1
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 18 12:03:14 2026 +0800
+
+    Final version
+
+commit 36babe234325e2159c39b6d621849a5b719e2ebc
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 18 11:53:40 2026 +0800
+
+    Wire functions together in main loop
+
+commit 09b69de7fda24ebfdcf0b732f3a7cb0a98137f35
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 18 11:49:13 2026 +0800
+
+    Add generate_report function
+
+commit 022829dd241bae405ac766231b2b9625890a1d5b
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 18 11:47:37 2026 +0800
+
+    Add process_delivery function
+
+commit 24c6742213abfd14fdf17b770757b6b065264572
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 18 11:41:36 2026 +0800
+
+    Add calculate_tax function
+
+commit fba720212c5b9ddce87816938eb7350aed47d672
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 18 11:36:44 2026 +0800
+
+    Add get_valid_input with validation
+
+commit 2deaef61f7df00464a8c0c56ce6e1d6d6b1ab35e
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 18 11:23:51 2026 +0800
+
+    Modular auditor Part 2
+
+commit 3ee31765f45057efe447157d5b4680406369aae0
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 18 10:59:10 2026 +0800
+
+    Modular auditor Part 1
+
+commit 0cca0392facf7b27c1d253670e748eeed07e3cf5
+Merge: 3436692 7baa564
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 18 10:52:08 2026 +0800
+
+    Merge branch 'master' of https://github.com/ttjunkang/INF1103-Labs
+
+commit 34366924379577ffeb74fc775b31e55b294dc151
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Sep 18 10:52:00 2026 +0800
+
+    Start modular_auditor.py: initialize inventory
+
+commit feef439ea970ce49a832f391675f68e1fd9b5acd
+Author: Jun Kang <2603068@sit.singaporetech.edu.sg>
+Date:   Thu Sep 17 23:18:00 2026 +0800
+
+    Initial version of modular_auditor.py
+
+commit 3a66e6b49d0b2e2d9c1250919c76e2c70ac794c5
+Author: Jun Kang <2603068@sit.singaporetech.edu.sg>
+Date:   Thu Sep 17 23:01:04 2026 +0800
+
+    Initial version of modular_auditor.py
+
+commit 7baa564f1c1f0f8d71152946a3e61725a4ea7b8c
+Author: Tan Jun Kang <2603068@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 23:33:32 2026 +0800
+
+    Print final output
+
+commit ffcfae43a764e1084d7b672dbb12137f3415c889
+Author: Tan Jun Kang <2603068@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 23:30:09 2026 +0800
+
+    Reject negative numbers
+
+commit b8489a326390f67bcb2e03f3c8a32d3de81226ef
+Author: Tan Jun Kang <2603068@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 23:10:40 2026 +0800
+
+    Check for integer
+
+commit a156dfabaa86058c2a4ead7e5cf96e70607042d9
+Author: Tan Jun Kang <2603068@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 23:08:55 2026 +0800
+
+    If user enter quit
+
+commit c1b0a8abe2ff017ef6d420bbd8959df400012441
+Author: Tan Jun Kang <2603068@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 23:06:00 2026 +0800
+
+    Prompt user to enter stock quantity
+
+commit e13db1a8da6898a4e5def4312f4ac996a1f76936
+Author: Tan Jun Kang <2603068@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 22:52:08 2026 +0800
+
+    Initial version of auditor.py
+
+commit b333122c3ddde86e330c1d4fba5e7082e0a036f9
+Author: Tan Jun Kang <2603068@sit.singaporetech.edu.sg>
+Date:   Fri Sep 4 14:47:08 2026 +0800
+
+    Fun conditions
+
+commit b7f2cb7a3cbb6161bf05a9a9c3f19e51dd3c4bae
+Author: Tan Jun Kang <2603068@sit.singaporetech.edu.sg>
+Date:   Fri Sep 4 14:42:55 2026 +0800
+
+    Dynamic Profile
+
+commit 7805deb2dad77036e53d451266cca9837d6fa84c
+Author: Tan Jun Kang <2603068@sit.singaporetech.edu.sg>
+Date:   Fri Sep 4 14:37:41 2026 +0800
+
+    Follower Growth tracker
+
+commit 5bdeb27c4c2c10d0cad40ababf6cdf0057c91ef1
+Author: Tan Jun Kang <2603068@sit.singaporetech.edu.sg>
+Date:   Fri Sep 4 14:34:13 2026 +0800
+
+    Added Profile Variable
+
+commit f7aeb06cc990d63b63e7683806372aa829361f81
+Author: Tan Jun Kang <2603068@sit.singaporetech.edu.sg>
+Date:   Fri Sep 4 14:25:27 2026 +0800
+
+    First Post
