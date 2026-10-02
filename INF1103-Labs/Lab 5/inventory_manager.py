@@ -102,8 +102,34 @@ def search_product(inventory):
     print(f"Stock: {product['stock']}")
     print("-" * 50)
 
+#Load Inventory
+def load_inventory():
+    if os.path.exists(INVENTORY_FILE):
+        print(f"{INVENTORY_FILE} found.")
+        try:
+            with open(INVENTORY_FILE, "r") as f:
+                data = json.load(f)
+            print("Inventory loaded successfully.")
+            return data
+        except (json.JSONDecodeError, OSError):
+            print("Could not read existing file. Starting with an empty inventory.")
+            return []
+    else:
+        print(f"{INVENTORY_FILE} not found. Starting with an empty inventory.")
+        return []
+
+#Save Inventory
+def save_inventory(inventory):
+    print("Saving inventory...")
+    with open(INVENTORY_FILE, "w") as f:
+        json.dump(inventory, f, indent=4)
+    print(f"Inventory saved successfully to {INVENTORY_FILE}.")
+
 display_all(inventory)
 update_stock(inventory)     
 display_all(inventory)      
 search_product(inventory)   
 search_product(inventory)  
+print(load_inventory())
+save_inventory(inventory)
+print(load_inventory())
