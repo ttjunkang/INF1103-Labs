@@ -9,12 +9,12 @@ inventory = [
     {"id": "P003", "name": "Keyboard", "price": 45.00, "stock": 25},
 ]
 
+#Helper functions
 def find_product(inventory, product_id):
     for product in inventory:
         if product["id"] == product_id:
             return product
     return None
-
 
 def get_valid_float(prompt):
     while True:
@@ -28,7 +28,6 @@ def get_valid_float(prompt):
         except ValueError:
             print("Error: Please enter a valid number.")
 
-
 def get_valid_int(prompt):
     while True:
         raw = input(prompt).strip()
@@ -37,6 +36,7 @@ def get_valid_int(prompt):
             continue
         return int(raw)
 
+#Display of Products and Adding Product
 def display_all(inventory):
     print("Current Inventory")
     print("-" * 50)
@@ -49,7 +49,6 @@ def display_all(inventory):
                 f"Price: ${product['price']:.2f} | Stock: {product['stock']}"
             )
     print("-" * 50)
-
 
 def add_product(inventory):
     print("Add New Product")
@@ -67,6 +66,44 @@ def add_product(inventory):
     inventory.append(product)
     print("Product added successfully!")
 
+#Update Stock and Search Product
+def update_stock(inventory):
+    print("Update Stock")
+    product_id = input("Enter Product ID: ").strip()
+
+    product = find_product(inventory, product_id)
+    if product is None:
+        print("Product not found.")
+        return
+
+    print("Product Found:")
+    print(f"Name: {product['name']}")
+    print(f"Current Stock: {product['stock']}")
+
+    new_stock = get_valid_int("New Stock Quantity: ")
+    product["stock"] = new_stock
+    print("Stock updated successfully!")
+
+
+def search_product(inventory):
+    print("Search Product")
+    product_id = input("Enter Product ID: ").strip()
+
+    product = find_product(inventory, product_id)
+    if product is None:
+        print("Product not found.")
+        return
+
+    print("Product Found")
+    print("-" * 50)
+    print(f"ID: {product['id']}")
+    print(f"Name: {product['name']}")
+    print(f"Price: ${product['price']:.2f}")
+    print(f"Stock: {product['stock']}")
+    print("-" * 50)
+
 display_all(inventory)
-add_product(inventory)
-display_all(inventory)
+update_stock(inventory)     
+display_all(inventory)      
+search_product(inventory)   
+search_product(inventory)  
