@@ -46,26 +46,28 @@ def add_product_menu(inventory):
     print()
 
 #Update Stock and Search Product
-def update_stock(inventory):
+def update_stock_menu(inventory):
     print("Update Stock")
     product_id = input("Enter Product ID: ").strip()
     print()
 
-    product = find_product(inventory, product_id)
+    product = inventory.search_product(product_id)
     if product is None:
         print("Product not found.")
         print()
         return
 
     print("Product Found:")
-    print(f"Name: {product['name']}")
-    print(f"Current Stock: {product['stock']}")
+    print(f"Name: {product.get_name()}")
+    print(f"Current Stock: {product.get_stock()}")
     print()
 
     new_stock = get_valid_int("New Stock Quantity: ")
     print()
-    product["stock"] = new_stock
-    print("Stock updated successfully!")
+    if product.update_stock(new_stock):
+        print("Stock updated successfully!")
+    else:
+        print("Error: Invalid stock quantity.")
     print()
 
 def search_product(inventory):
