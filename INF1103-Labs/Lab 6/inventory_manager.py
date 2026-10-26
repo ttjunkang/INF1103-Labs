@@ -6,7 +6,7 @@ from inventory import Inventory
 
 INVENTORY_FILE = "inventory.json"
 
-
+# Input helpers (for user input)
 def get_valid_float(prompt):
     while True:
         raw = input(prompt).strip()
@@ -27,6 +27,7 @@ def get_valid_int(prompt):
             continue
         return int(raw)
 
+# Menu actions (talk to the Inventory object, not raw data)
 def add_product_menu(inventory):
     print("Add New Product")
     product_id = input("Product ID: ").strip()
@@ -87,7 +88,7 @@ def search_product_menu(inventory):
     print("-" * 50)
     print()
 
-#Load Inventory
+#Load Inventory (file handling)
 def load_inventory():
     inventory = Inventory()
 
