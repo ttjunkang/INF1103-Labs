@@ -1,6 +1,9 @@
 import json
 import os
 
+from product import Product
+from inventory import Inventory
+
 INVENTORY_FILE = "inventory.json"
 
 
@@ -115,25 +118,31 @@ def search_product(inventory):
 
 #Load Inventory
 def load_inventory():
-    if os.path.exists(INVENTORY_FILE):
-        print(f"{INVENTORY_FILE} found.")
-        try:
-            with open(INVENTORY_FILE, "r") as f:
-                data = json.load(f)
-            print("Inventory loaded successfully.")
-            return data
-        except (json.JSONDecodeError, OSError):
-            print("Could not read existing file. Starting with an empty inventory.")
-            return []
-    else:
+    inventory = Inventory()
+
+    if not os.path.exists(INVENTORY_FILE):
         print(f"{INVENTORY_FILE} not found. Starting with an empty inventory.")
-        return []
+        return inventory
+
+    print(f"{INVENTORY_FILE} found.")
+    try:
+        with open(INVENTORY_FILE, "r") as f:
+            data = json.load(f)
+        for item in data:
+            product = Product(item["id"], item["name"], item["price"], item["stock"])
+            inventory.add_product(product)
+        print("Inventory loaded successfully.")
+    except (json.JSONDecodeError, OSError, KeyError, TypeError):
+        print("Could not read existing file. Starting with an empty inventory.")
+        inventory = Inventory()
+
+    return inventory
 
 #Save Inventory
 def save_inventory(inventory):
     print("Saving inventory...")
     with open(INVENTORY_FILE, "w") as f:
-        json.dump(inventory, f, indent=4)
+        json.dump(inventory.to_list(), f, indent=4)
     print(f"Inventory saved successfully to {INVENTORY_FILE}.")
     print()
 
