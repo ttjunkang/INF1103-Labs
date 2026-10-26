@@ -136,12 +136,10 @@ def main():
     print()
 
     inventory = load_inventory()
-    if not inventory:
-        inventory = [
-            {"id": "P001", "name": "Laptop", "price": 1200.00, "stock": 15},
-            {"id": "P002", "name": "Mouse", "price": 25.50, "stock": 40},
-            {"id": "P003", "name": "Keyboard", "price": 45.00, "stock": 25},
-        ]
+    if inventory.is_empty():
+        inventory.add_product(Product("P001", "Laptop", 1200.00, 15))
+        inventory.add_product(Product("P002", "Mouse", 25.50, 40))
+        inventory.add_product(Product("P003", "Keyboard", 45.00, 25))
 
     while True:
         print_menu()
@@ -149,13 +147,13 @@ def main():
         print()
 
         if choice == "1":
-            display_all(inventory)
+            inventory.display_all()
         elif choice == "2":
-            add_product(inventory)
+            add_product_menu(inventory)
         elif choice == "3":
-            update_stock(inventory)
+            update_stock_menu(inventory)
         elif choice == "4":
-            search_product(inventory)
+            search_product_menu(inventory)
         elif choice == "5":
             save_inventory(inventory)
         elif choice == "6":
