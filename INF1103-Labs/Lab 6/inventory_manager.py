@@ -7,13 +7,6 @@ from inventory import Inventory
 INVENTORY_FILE = "inventory.json"
 
 
-#Helper functions
-def find_product(inventory, product_id):
-    for product in inventory:
-        if product["id"] == product_id:
-            return product
-    return None
-
 def get_valid_float(prompt):
     while True:
         raw = input(prompt).strip()
@@ -34,26 +27,11 @@ def get_valid_int(prompt):
             continue
         return int(raw)
 
-#Display of Products and Adding Product
-def display_all(inventory):
-    print("Current Inventory")
-    print("-" * 50)
-    if not inventory:
-        print("(No products in inventory)")
-    else:
-        for product in inventory:
-            print(
-                f"ID: {product['id']} | Name: {product['name']} | "
-                f"Price: ${product['price']:.2f} | Stock: {product['stock']}"
-            )
-    print("-" * 50)
-    print()
-
-def add_product(inventory):
+def add_product_menu(inventory):
     print("Add New Product")
     product_id = input("Product ID: ").strip()
 
-    if find_product(inventory, product_id) is not None:
+    if inventory.search_product(product_id) is not None:
         print(f"A product with ID {product_id} already exists.")
         print()
         return
@@ -62,14 +40,8 @@ def add_product(inventory):
     price = get_valid_float("Price: ")
     stock = get_valid_int("Stock Quantity: ")
 
-    product = {
-        "id": product_id, 
-        "name": name, 
-        "price": price, 
-        "stock": stock
-    }
-
-    inventory.append(product)
+    product = Product(product_id, name, price, stock)
+    inventory.add_product(product)
     print("Product added successfully!")
     print()
 
