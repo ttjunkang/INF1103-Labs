@@ -15,3 +15,22 @@ class Inventory:
             if product.get_product_id() == product_id:
                 return product
         return None
+
+    def display_all(self):
+        print("Current Inventory")
+        print("-" * 50)
+        if not self.__products:
+            print("(No products in inventory)")
+        else:
+            for product in self.__products:
+                product.display_information()
+        print("-" * 50)
+        print()
+ 
+    def is_empty(self):
+        return len(self.__products) == 0
+ 
+    # Returns list of dictionaries (used when saving to JSON)
+    def to_list(self):
+        return [product.to_dict() for product in self.__products]
+ 
