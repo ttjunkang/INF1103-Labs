@@ -70,12 +70,12 @@ def update_stock_menu(inventory):
         print("Error: Invalid stock quantity.")
     print()
 
-def search_product(inventory):
+def search_product_menu(inventory):
     print("Search Product")
     product_id = input("Enter Product ID: ").strip()
     print()
 
-    product = find_product(inventory, product_id)
+    product = inventory.search_product(product_id)
     if product is None:
         print("Product not found.")
         print()
@@ -83,10 +83,7 @@ def search_product(inventory):
 
     print("Product Found")
     print("-" * 50)
-    print(f"ID: {product['id']}")
-    print(f"Name: {product['name']}")
-    print(f"Price: ${product['price']:.2f}")
-    print(f"Stock: {product['stock']}")
+    product.display_information()
     print("-" * 50)
     print()
 
