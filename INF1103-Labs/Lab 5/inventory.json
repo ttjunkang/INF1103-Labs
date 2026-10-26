@@ -16,5 +16,11 @@
         "name": "Keyboard",
         "price": 45.0,
         "stock": 25
+    },
+    {
+        "id": "P004",
+        "name": "Monitor",
+        "price": 299.99,
+        "stock": 10
     }
 ]

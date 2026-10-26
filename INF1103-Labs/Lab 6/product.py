@@ -19,3 +19,17 @@ class Product:
  
     def get_stock(self):
         return self.__stock
+
+    # Product controls how its own stock is changed
+    def update_stock(self, quantity):
+        if not isinstance(quantity, int) or quantity < 0:
+            return False
+        self.__stock = quantity
+        return True
+ 
+    def display_information(self):
+        print(
+            f"ID: {self.__product_id} | Name: {self.__name} | "
+            f"Price: ${self.__price:.2f} | Stock: {self.__stock}"
+        )
+ 
