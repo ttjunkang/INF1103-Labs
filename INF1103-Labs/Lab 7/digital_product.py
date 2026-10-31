@@ -11,9 +11,7 @@ class DigitalProduct(Product):
     def get_download_size(self):
         return self.__download_size
 
+    # Overriding: parent shows common info, child adds download size
     def display_information(self):
-        print(
-            f"ID: {self.get_product_id()} | Name: {self.get_name()} | "
-            f"Price: ${self.get_price():.2f} | Stock: {self.get_stock()} | "
-            f"Download Size: {self.__download_size:.1f} MB"
-        )
+        super().display_information()
+        print(f"    Download Size: {self.__download_size:.1f} MB")
