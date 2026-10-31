@@ -1,4 +1,6 @@
-class Product:
+from abc import ABC, abstractmethod
+
+class Product(ABC):
     """SRP: Represents and manages ONE product."""
  
     def __init__(self, product_id, name, price, stock):
@@ -26,6 +28,11 @@ class Product:
             return False
         self.__stock = quantity
         return True
+
+    # Abstract method: every child class MUST implement this
+    @abstractmethod
+    def get_fulfilment_info(self):
+        pass
  
     def display_information(self):
         print(

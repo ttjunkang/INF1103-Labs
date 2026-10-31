@@ -11,6 +11,10 @@ class PhysicalProduct(Product):
     def get_weight(self):
         return self.__weight
 
+    # Required by the abstract Product class
+    def get_fulfilment_info(self):
+        return "Requires physical shipping"
+
     # Overriding: parent shows common info, child adds weight
     def display_information(self):
         super().display_information()

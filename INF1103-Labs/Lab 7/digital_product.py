@@ -10,6 +10,10 @@ class DigitalProduct(Product):
 
     def get_download_size(self):
         return self.__download_size
+
+    # Required by the abstract Product class
+    def get_fulfilment_info(self):
+        return "Delivered digitally via download link"
     
     # Overriding: parent shows common info, child adds download size
     def display_information(self):

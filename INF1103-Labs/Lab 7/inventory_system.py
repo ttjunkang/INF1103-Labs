@@ -147,6 +147,7 @@ def search_product_menu(inventory):
     print("Product Found")
     print("-" * 50)
     product.display_information()
+    print(f"    Fulfilment: {product.get_fulfilment_info()}")
     print("-" * 50)
     print()
 
