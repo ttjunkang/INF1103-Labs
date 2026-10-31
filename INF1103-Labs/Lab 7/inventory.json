@@ -3,30 +3,72 @@
         "id": "P001",
         "name": "Laptop",
         "price": 1200.0,
-        "stock": 10
+        "stock": 10,
+        "type": "physical",
+        "weight": 2.5
     },
     {
         "id": "P002",
         "name": "Mouse",
         "price": 25.5,
-        "stock": 50
+        "stock": 50,
+        "type": "physical",
+        "weight": 0.2
     },
     {
         "id": "P003",
         "name": "Keyboard",
         "price": 45.0,
-        "stock": 25
+        "stock": 25,
+        "type": "physical",
+        "weight": 0.8
     },
     {
         "id": "P004",
         "name": "Monitor",
         "price": 299.99,
-        "stock": 10
+        "stock": 10,
+        "type": "physical",
+        "weight": 4.5
     },
     {
         "id": "P005",
         "name": "Pen",
         "price": 1.99,
-        "stock": 24
+        "stock": 25,
+        "type": "physical",
+        "weight": 0.02
+    },
+    {
+        "id": "P006",
+        "name": "Apple Pen",
+        "price": 100.99,
+        "stock": 10,
+        "type": "physical",
+        "weight": 0.05
+    },
+    {
+        "id": "D001",
+        "name": "Operating System",
+        "price": 129.0,
+        "stock": 50,
+        "type": "digital",
+        "download_size": 4500.0
+    },
+    {
+        "id": "D002",
+        "name": "Antivirus Software",
+        "price": 49.9,
+        "stock": 100,
+        "type": "digital",
+        "download_size": 350.0
+    },
+    {
+        "id": "D003",
+        "name": "Adobe Software",
+        "price": 99.99,
+        "stock": 100,
+        "type": "digital",
+        "download_size": 350.0
     }
 ]

@@ -11,9 +11,14 @@ class PhysicalProduct(Product):
     def get_weight(self):
         return self.__weight
 
+    # Overriding: parent shows common info, child adds weight
     def display_information(self):
-        print(
-            f"ID: {self.get_product_id()} | Name: {self.get_name()} | "
-            f"Price: ${self.get_price():.2f} | Stock: {self.get_stock()} | "
-            f"Weight: {self.__weight:.2f} kg"
-        )
+        super().display_information()
+        print(f"    Weight: {self.__weight:.2f} kg")
+
+    # Overriding: parent fields + type and weight
+    def to_dict(self):
+        data = super().to_dict()
+        data["type"] = "physical"
+        data["weight"] = self.__weight
+        return data
