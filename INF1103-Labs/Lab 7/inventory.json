@@ -70,5 +70,13 @@
         "stock": 100,
         "type": "digital",
         "download_size": 350.0
+    },
+    {
+        "id": "D004",
+        "name": "3D Software",
+        "price": 80.0,
+        "stock": 20,
+        "type": "digital",
+        "download_size": 5000.0
     }
 ]

@@ -1,0 +1,47 @@
+commit a3ed8ccc5ba9df80028ff7d2808b95ea2d5621a9
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sun Nov 1 01:30:49 2026 +0800
+
+    Add CanBeShipped interface implemented by PhysicalProduct
+
+commit a8129de96744e355973d8cbfe0c6353a62899413
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sat Oct 31 18:54:29 2026 +0800
+
+    Make Product abstract with get_fulfilment_info implemented by subclasses
+
+commit 3f8ad6e2ba6fa3d382595bfbfc532171af65462b
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sat Oct 31 17:42:36 2026 +0800
+
+    Integrate Physical and Digital products into menu and JSON save/load
+
+commit ffe2f11b70e4254308232b0d3c6cb0fbbff8246e
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sat Oct 31 15:49:44 2026 +0800
+
+    Override display_information using super() to reuse parent output
+
+commit 24b1469736133caac782a8fb552fd758bdf75495
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sat Oct 31 15:35:24 2026 +0800
+
+    Add DigitalProduct subclass with download size
+
+commit 5e4dcf95677db6efce4f82656413979a50bab2fc
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sat Oct 31 14:58:59 2026 +0800
+
+    Add PhysicalProduct subclass with weight
+
+commit 113225b3e8158df9ced9090fa55c4cd24d57d53c
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Oct 30 15:46:06 2026 +0800
+
+    Update .gitignore for Python, venv and IDE files
+
+commit 5c7833be99c74e7f4b70ad6a158b0aa8eeeeead3
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Oct 30 15:13:24 2026 +0800
+
+    Start Lab 7 from Lab 6 inventory system

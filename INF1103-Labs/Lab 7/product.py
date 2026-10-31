@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class Product(ABC):
     """SRP: Represents and manages ONE product."""
  
