@@ -2,8 +2,13 @@
     {
         "id": "P001",
         "name": "Laptop",
-        "price": 1200.0,
+        "price": 1200,
         "stock": 10,
+        "supplier": {
+            "id": "S001",
+            "name": "TechWorld Pte Ltd",
+            "contact_email": "sales@techworld.com"
+        },
         "type": "physical",
         "weight": 2.5
     },
@@ -12,14 +17,24 @@
         "name": "Mouse",
         "price": 25.5,
         "stock": 50,
+        "supplier": {
+            "id": "S001",
+            "name": "TechWorld Pte Ltd",
+            "contact_email": "sales@techworld.com"
+        },
         "type": "physical",
         "weight": 0.2
     },
     {
         "id": "P003",
         "name": "Keyboard",
-        "price": 45.0,
+        "price": 45,
         "stock": 25,
+        "supplier": {
+            "id": "S001",
+            "name": "TechWorld Pte Ltd",
+            "contact_email": "sales@techworld.com"
+        },
         "type": "physical",
         "weight": 0.8
     },
@@ -28,6 +43,11 @@
         "name": "Monitor",
         "price": 299.99,
         "stock": 10,
+        "supplier": {
+            "id": "S001",
+            "name": "TechWorld Pte Ltd",
+            "contact_email": "sales@techworld.com"
+        },
         "type": "physical",
         "weight": 4.5
     },
@@ -36,6 +56,11 @@
         "name": "Pen",
         "price": 1.99,
         "stock": 25,
+        "supplier": {
+            "id": "S003",
+            "name": "Office Essentials",
+            "contact_email": "support@officeessentials.com"
+        },
         "type": "physical",
         "weight": 0.02
     },
@@ -44,39 +69,90 @@
         "name": "Apple Pen",
         "price": 100.99,
         "stock": 10,
+        "supplier": {
+            "id": "S003",
+            "name": "Office Essentials",
+            "contact_email": "support@officeessentials.com"
+        },
         "type": "physical",
         "weight": 0.05
     },
     {
         "id": "D001",
         "name": "Operating System",
-        "price": 129.0,
+        "price": 129,
         "stock": 50,
+        "supplier": {
+            "id": "S002",
+            "name": "SoftHub Pte Ltd",
+            "contact_email": "orders@softhub.com"
+        },
         "type": "digital",
-        "download_size": 4500.0
+        "download_size": 4500
     },
     {
         "id": "D002",
         "name": "Antivirus Software",
         "price": 49.9,
         "stock": 100,
+        "supplier": {
+            "id": "S002",
+            "name": "SoftHub Pte Ltd",
+            "contact_email": "orders@softhub.com"
+        },
         "type": "digital",
-        "download_size": 350.0
+        "download_size": 350
     },
     {
         "id": "D003",
         "name": "Adobe Software",
         "price": 99.99,
         "stock": 100,
+        "supplier": {
+            "id": "S002",
+            "name": "SoftHub Pte Ltd",
+            "contact_email": "orders@softhub.com"
+        },
         "type": "digital",
-        "download_size": 350.0
+        "download_size": 350
     },
     {
         "id": "D004",
         "name": "3D Software",
-        "price": 80.0,
+        "price": 80,
         "stock": 20,
+        "supplier": {
+            "id": "S002",
+            "name": "SoftHub Pte Ltd",
+            "contact_email": "orders@softhub.com"
+        },
         "type": "digital",
-        "download_size": 5000.0
+        "download_size": 5000
+    },
+    {
+        "id": "P007",
+        "name": "Guitar",
+        "price": 350.0,
+        "stock": 5,
+        "supplier": {
+            "id": "S001",
+            "name": "TechWorld Pte Ltd",
+            "contact_email": "sales@techworld.com"
+        },
+        "type": "physical",
+        "weight": 3.5
+    },
+    {
+        "id": "D005",
+        "name": "Music Album",
+        "price": 9.9,
+        "stock": 80,
+        "supplier": {
+            "id": "S009",
+            "name": "Tune Ltd",
+            "contact_email": "i@tunes.com"
+        },
+        "type": "digital",
+        "download_size": 80.0
     }
 ]

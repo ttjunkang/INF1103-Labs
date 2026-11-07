@@ -5,8 +5,7 @@ from supplier import Supplier
 class DigitalProduct(Product):
     # Digital product is a Product, with a download size
 
-    def __init__(self, product_id: str, name: str, price: float, stock: int,
-                 supplier: Supplier, download_size: float) -> None:
+    def __init__(self, product_id: str, name: str, price: float, stock: int, supplier: Supplier, download_size: float) -> None:
         super().__init__(product_id, name, price, stock, supplier)
         self.__download_size: float = download_size
 

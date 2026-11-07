@@ -1,3 +1,7 @@
+
+from product import Product
+
+
 class Inventory:
     # SRP: Manages a collection of Product objects
  
@@ -9,6 +13,9 @@ class Inventory:
             return False
         self.__products.append(product)
         return True
+
+    def get_products(self) -> list[Product]:
+        return list(self.__products)
 
     def search_product(self, product_id):
         for product in self.__products:

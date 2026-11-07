@@ -5,8 +5,7 @@ from supplier import Supplier
 class Product(ABC):
     # SRP: Represents and manages 1 product
  
-    def __init__(self, product_id: str, name: str, price: float,
-                 stock: int, supplier: Supplier) -> None:
+    def __init__(self, product_id: str, name: str, price: float, stock: int, supplier: Supplier) -> None:
         self.__product_id: str = product_id
         self.__name: str = name
         self.__price: float = price
@@ -44,7 +43,7 @@ class Product(ABC):
     def display_information(self) -> None:
         print(
             f"ID: {self.__product_id} | Name: {self.__name} | "
-            f"Price: ${self.__price:.2f} | Stock: {self.__stock}"
+            f"Price: ${self.__price:.2f} | Stock: {self.__stock} | "
             f"Supplier: {self.__supplier.get_name()}"
         )
 
