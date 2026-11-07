@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 
 class Product(ABC):
-    """SRP: Represents and manages ONE product."""
+    # SRP: Represents and manages 1 product
  
     def __init__(self, product_id, name, price, stock):
         self.__product_id = product_id
@@ -10,7 +10,7 @@ class Product(ABC):
         self.__price = price
         self.__stock = stock
 
-    # Getters (read-only access from outside)
+    # Getters - read-only access from outside
     def get_product_id(self):
         return self.__product_id
  
@@ -30,7 +30,7 @@ class Product(ABC):
         self.__stock = quantity
         return True
 
-    # Abstract method: every child class MUST implement this
+    # Abstract method: every child class must implement this
     @abstractmethod
     def get_fulfilment_info(self):
         pass
@@ -41,7 +41,7 @@ class Product(ABC):
             f"Price: ${self.__price:.2f} | Stock: {self.__stock}"
         )
 
-     # Converts product to a dictionary (used when saving to JSON)
+     # Converts product to a dictionary for JSON
     def to_dict(self):
         return {
             "id": self.__product_id,

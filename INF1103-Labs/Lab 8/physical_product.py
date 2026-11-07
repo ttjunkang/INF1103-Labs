@@ -3,8 +3,7 @@ from can_be_shipped import CanBeShipped
 
 
 class PhysicalProduct(Product, CanBeShipped):
-    """A physical product IS-A Product (inheritance)
-    and CanBeShipped (interface)."""
+    # Physical product is a Product and CanBeShipped
 
     BASE_SHIPPING_COST = 5.00
     SHIPPING_RATE_PER_KG = 2.00

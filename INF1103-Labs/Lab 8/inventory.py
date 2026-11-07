@@ -1,5 +1,5 @@
 class Inventory:
-    """SRP: Manages a COLLECTION of Product objects."""
+    # SRP: Manages a collection of Product objects
  
     def __init__(self):
         self.__products = []
@@ -30,7 +30,7 @@ class Inventory:
     def is_empty(self):
         return len(self.__products) == 0
  
-    # Returns list of dictionaries (used when saving to JSON)
+    # Returns list of dictionaries for JSON
     def to_list(self):
         return [product.to_dict() for product in self.__products]
  

@@ -8,7 +8,7 @@ from inventory import Inventory
 INVENTORY_FILE = "inventory.json"
 
 
-# Input helpers (main program is responsible for user input)
+# Input helpers
 def get_valid_float(prompt):
     while True:
         raw = input(prompt).strip()
@@ -41,7 +41,7 @@ def get_valid_choice(prompt, options):
 
 # Uses the saved "type" to create the correct subclass
 def create_product_from_dict(item):
-    product_type = item.get("type", "physical")  # Lab 6 data has no type
+    product_type = item.get("type", "physical")  
     if product_type == "digital":
         return DigitalProduct(item["id"], item["name"], item["price"],
                               item["stock"], item.get("download_size", 0.0))
@@ -79,7 +79,7 @@ def save_inventory(inventory):
     print()
 
 
-# Menu actions (talk to the Inventory object, not raw data)
+# Menu actions which talk to the Inventory object not raw data
 def add_product_menu(inventory):
     print("Add New Product")
     product_id = input("Product ID: ").strip()
