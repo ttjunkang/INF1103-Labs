@@ -1,9 +1,9 @@
 from supplier import Supplier
 from physical_product import PhysicalProduct
 from digital_product import DigitalProduct
+from inventory import Inventory
  
  
-# Section 2: Association - Supplier and Product
 def test_association() -> None:
     print("=== 2. Association: Supplier and Product ===")
     supplier = Supplier("S100", "Music Supplies Co", "hello@musicsupplies.com")
@@ -27,7 +27,36 @@ def test_association() -> None:
     print("Supplier with no products:")
     new_supplier.display_information()
     print()
+
+def test_aggregation() -> None:
+    print("=== 3. Aggregation: Inventory and Product ===")
+    supplier = Supplier("S200", "TechWorld Pte Ltd", "sales@techworld.com")
+ 
+    # 1. Product exists BEFORE any Inventory
+    laptop = PhysicalProduct("P200", "Laptop", 1200.00, 10, supplier, 2.5)
+    inventory_a = Inventory()
+    inventory_b = Inventory()
+ 
+    # 2. Add to Inventory A
+    inventory_a.add_product(laptop)
+    print(f"Laptop in Inventory A? {inventory_a.find_product('P200') is not None}")
+ 
+    # 3. Remove from Inventory A (Predict first: does the laptop still work?)
+    removed = inventory_a.remove_product("P200")
+    print(f"Laptop in Inventory A after remove? {inventory_a.find_product('P200') is not None}")
+    print(f"Removed object is the same laptop? {removed is laptop}")
+    print("Laptop still works after removal:")
+    laptop.display_information()
+ 
+    # 4. Add the SAME object to Inventory B (transfer)
+    inventory_b.add_product(laptop)
+    print(f"Same laptop now in Inventory B? {inventory_b.find_product('P200') is laptop}")
+ 
+    # 5. Emptying an Inventory does not destroy the Product
+    print(f"Inventory A empty? {inventory_a.is_empty()} - laptop still exists: {laptop.get_name()}")
+    print()
+ 
  
  
 if __name__ == "__main__":
-    test_association()
+    test_aggregation()
