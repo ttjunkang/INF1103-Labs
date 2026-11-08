@@ -3,6 +3,7 @@ from physical_product import PhysicalProduct
 from digital_product import DigitalProduct
 from inventory import Inventory
 from order import Order
+from product import Product
  
  
 def test_association() -> None:
@@ -82,6 +83,52 @@ def test_composition() -> None:
     order_1.display_order()
 
 
+def show_product_details(product: Product) -> None:
+    product.display_information()
+    print(product.get_fulfilment_info())
+ 
+ 
+def test_substitutability() -> None:
+    print("=== 6. LSP: substitutability ===")
+    supplier = Supplier("S400", "General Supplies", "info@general.com")
+    speaker = PhysicalProduct("P400", "Speaker", 89.90, 20, supplier, 1.8)
+    music = DigitalProduct("D400", "Music Album", 9.90, 100, supplier, 80.0)
+
+    show_product_details(speaker)
+    show_product_details(music)
+    print()
+
+    inventory = Inventory()
+    inventory.add_product(speaker)
+    inventory.add_product(music)
+    print(f"find_product('P400') -> {inventory.find_product('P400').get_name()}")
+    print(f"find_product('D400') -> {inventory.find_product('D400').get_name()}")
+ 
+    for product in inventory.get_products():
+        valid = product.update_stock(25)
+        invalid = product.update_stock(-5)
+        print(f"{product.get_name()}: update_stock(25) -> {valid}, "
+              f"update_stock(-5) -> {invalid}, stock = {product.get_stock()}")
+    print()
+ 
+ 
+def test_polymorphism() -> None:
+    print("=== 7. Polymorphism: one loop over Product ===")
+    supplier = Supplier("S500", "Mixed Goods Co", "sales@mixedgoods.com")
+    inventory = Inventory()
+    inventory.add_product(PhysicalProduct("P500", "Desk Lamp", 39.90, 12, supplier, 1.2))
+    inventory.add_product(DigitalProduct("D500", "Photo Editor", 79.00, 30, supplier, 950.0))
+
+    for product in inventory.get_products():
+        product.display_information()
+        print(product.get_fulfilment_info())
+    print()
+
+
  
 if __name__ == "__main__":
+    test_association()
+    test_aggregation()
     test_composition()
+    test_substitutability()
+    test_polymorphism()
