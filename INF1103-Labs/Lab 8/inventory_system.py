@@ -6,6 +6,8 @@ from digital_product import DigitalProduct
 from inventory import Inventory
 from supplier import Supplier
 from product import Product
+from order import Order
+
 
 
 INVENTORY_FILE = "inventory.json"
@@ -193,6 +195,47 @@ def search_product_menu(inventory: Inventory) -> None:
     print("-" * 70)
     print()
 
+
+def remove_product_menu(inventory: Inventory) -> None:
+    print("Remove Product")
+    product_id = input("Enter Product ID: ").strip()
+    print()
+ 
+    removed_product = inventory.remove_product(product_id)
+    if removed_product is None:
+        print("Product not found.")
+    else:
+        print(f"{removed_product.get_name()} removed from the inventory.")
+        print("The Product object still exists:")
+        removed_product.display_information()
+    print()
+
+
+def create_order_menu(inventory: Inventory) -> None:
+    print("Create Order")
+    order = Order(input("Order ID: ").strip())
+ 
+    while True:
+        product_id = input("Product ID to order (or 'done'): ").strip()
+        if product_id.lower() == "done":
+            break
+ 
+        product = inventory.find_product(product_id)
+        if product is None:
+            print("Product not found.")
+            continue
+ 
+        quantity = get_valid_int("Quantity: ")
+        if quantity == 0:
+            print("Error: Quantity must be at least 1.")
+            continue
+ 
+        order.add_order_line(product, quantity)
+        print(f"Added {quantity} x {product.get_name()}.")
+ 
+    print()
+    order.display_order()
+
  
 def print_menu() -> None:
     print()
@@ -201,8 +244,10 @@ def print_menu() -> None:
     print("2. Add Product")
     print("3. Update Stock")
     print("4. Search Product")
-    print("5. Save Inventory")
-    print("6. Exit")
+    print("5. Remove Product")
+    print("6. Create Order")
+    print("7. Save Inventory")
+    print("8. Exit")
     print("----------------------------")
 
 
@@ -234,15 +279,20 @@ def main() -> None:
         elif choice == "4":
             search_product_menu(inventory)
         elif choice == "5":
-            save_inventory(inventory)
+            remove_product_menu(inventory)
         elif choice == "6":
+            create_order_menu(inventory)
+        elif choice == "7":
+            save_inventory(inventory)
+        elif choice == "8":
             print("Saving inventory before exit...")
             save_inventory(inventory)
             print("Thank you for using Inventory Management System.")
             print("Program terminated.")
             break
         else:
-            print("Invalid option. Please choose a number from 1-6.")
+            print("Invalid option. Please choose a number from 1-8.")
+
  
  
 if __name__ == "__main__":
