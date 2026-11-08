@@ -1,0 +1,53 @@
+commit a99f358bbdecaf80fbe83b5257cb3249d592fbe6
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sun Nov 8 14:30:33 2026 +0800
+
+    Add Remove Product and Create Order to menu and review type hints
+
+commit 9d400d9152d77f940867610aa568c8bbd60719a8
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sun Nov 8 12:27:10 2026 +0800
+
+    Add LSP substitutability, polymorphism tests, and check other tests
+
+commit 7294f7ac4981373848693cdd2cc07b9b42201fd2
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sun Nov 8 01:28:41 2026 +0800
+
+    Add Order and OrderLine with composition
+
+commit a875683c7073a91b20dbd970aa544e9bd6ea7680
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sun Nov 8 00:32:48 2026 +0800
+
+    Add remove_product and find_product with type hints for aggregation part
+
+commit 1dedd2302b5e8a84fa538142e39570a9cc5959a8
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sat Nov 7 23:03:49 2026 +0800
+
+    Integrate Supplier into menu and JSON save/load
+
+commit 90ccf0b64f3a400005a10887555ef5fd08f77f3c
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sat Nov 7 18:24:44 2026 +0800
+
+    Add association test for Supplier and Product
+
+commit c32b9423fbf1143aa7ec995765167566f3135100
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sat Nov 7 17:12:22 2026 +0800
+
+    Associate Supplier with Product and also pass from PhysicalProduct and DigitalProduct with type hints
+
+commit 8a3f2fe4b85894df91cbc5a856a3de7aeedc6b50
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sat Nov 7 16:16:16 2026 +0800
+
+    Add Supplier class
+
+commit 417127eab44e4abd617c8f3295168e11dfb40313
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sat Nov 7 15:06:02 2026 +0800
+
+    Start Lab 8 from Lab 7 inventory system
