@@ -1,12 +1,11 @@
 import json
 import os
 
-from physical_product import PhysicalProduct
-from digital_product import DigitalProduct
 from inventory import Inventory
 from supplier import Supplier
 from product import Product
 from order import Order
+from product_factory import ProductFactory
 from discount_strategy import DiscountStrategy
 from no_discount import NoDiscount
 from percentage_discount import PercentageDiscount
@@ -74,12 +73,11 @@ def get_or_create_supplier(data: dict[str, str], suppliers: dict[str, Supplier])
 
 
 # Uses the saved "type" to create the correct subclass
+# The factory uses the saved "type" to create the correct subclass
 def create_product_from_dict(item: dict, suppliers: dict[str, Supplier]) -> Product:
     supplier = get_or_create_supplier(item.get("supplier", UNKNOWN_SUPPLIER), suppliers)
     product_type = item.get("type", "physical")  # Lab 6 data has no type
-    if product_type == "digital":
-        return DigitalProduct(item["id"], item["name"], item["price"], item["stock"], supplier, item.get("download_size", 0.0))
-    return PhysicalProduct(item["id"], item["name"], item["price"], item["stock"], supplier, item.get("weight", 0.0))
+    return ProductFactory.create(product_type, item["id"], item["name"], item["price"], item["stock"], supplier,weight=item.get("weight", 0.0), download_size=item.get("download_size", 0.0))
 
 
 # File handling
@@ -149,12 +147,13 @@ def add_product_menu(inventory: Inventory) -> None:
     print("Product Type: 1. Physical  2. Digital")
     product_type = get_valid_choice("Choose type (1/2): ", ["1", "2"])
  
+    # Collects the details meaning the factory creates the object
     if product_type == "1":
         weight = get_valid_float("Weight (kg): ")
-        product = PhysicalProduct(product_id, name, price, stock, supplier, weight)
+        product = ProductFactory.create("physical", product_id, name, price, stock, supplier, weight=weight)
     else:
         download_size = get_valid_float("Download Size (MB): ")
-        product = DigitalProduct(product_id, name, price, stock, supplier, download_size)
+        product = ProductFactory.create("digital", product_id, name, price, stock, supplier, download_size=download_size)
  
     inventory.add_product(product)
     print("Product added successfully!")
@@ -285,9 +284,9 @@ def main() -> None:
     if inventory.is_empty():
         tech_supplier = Supplier("S001", "TechWorld Pte Ltd", "sales@techworld.com")
         soft_supplier = Supplier("S002", "SoftHub Pte Ltd", "orders@softhub.com")
-        inventory.add_product(PhysicalProduct("P001", "Laptop", 1200.00, 15, tech_supplier, 2.5))
-        inventory.add_product(PhysicalProduct("P002", "Mouse", 25.50, 40, tech_supplier, 0.2))
-        inventory.add_product(DigitalProduct("D001", "Operating System", 129.00, 50, soft_supplier, 4500.0))
+        inventory.add_product(ProductFactory.create("physical", "P001", "Laptop", 1200.00, 15, tech_supplier, weight=2.5))
+        inventory.add_product(ProductFactory.create("physical", "P002", "Mouse", 25.50, 40, tech_supplier, weight=0.2))
+        inventory.add_product(ProductFactory.create("digital", "D001", "Operating System", 129.00, 50, soft_supplier, download_size=4500.0))
  
     while True:
         print_menu()
