@@ -96,7 +96,7 @@ def load_inventory() -> Inventory:
         for item in data:
             inventory.add_product(create_product_from_dict(item, suppliers))
         print("Inventory loaded successfully.")
-    except (json.JSONDecodeError, OSError, KeyError, TypeError):
+    except (json.JSONDecodeError, OSError, KeyError, TypeError, ValueError):
         print("Could not read existing file. Starting with an empty inventory.")
         inventory = Inventory()
  
