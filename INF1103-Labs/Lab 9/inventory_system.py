@@ -7,12 +7,23 @@ from inventory import Inventory
 from supplier import Supplier
 from product import Product
 from order import Order
-
+from discount_strategy import DiscountStrategy
+from no_discount import NoDiscount
+from percentage_discount import PercentageDiscount
+from bulk_discount import BulkDiscount
+from student_discount import StudentDiscount
 
 
 INVENTORY_FILE = "inventory.json"
 
 UNKNOWN_SUPPLIER = {"id": "S000", "name": "Unknown Supplier", "contact_email": "-"}
+
+DISCOUNT_OPTIONS: dict[str, tuple[str, DiscountStrategy]] = {
+    "1": ("No discount", NoDiscount()),
+    "2": ("10% off", PercentageDiscount(10)),
+    "3": ("$20 off orders of $200 or more", BulkDiscount(200, 20)),
+    "4": ("Student discount (5% off)", StudentDiscount()),
+}
 
 
 # Input helpers
@@ -232,9 +243,22 @@ def create_order_menu(inventory: Inventory) -> None:
  
         order.add_order_line(product, quantity)
         print(f"Added {quantity} x {product.get_name()}.")
- 
+
+    if order.get_order_lines():
+        print()
+        order.set_discount(choose_discount())
+
     print()
     order.display_order()
+
+
+# Picks a strategy object, order never needs to know which one 
+def choose_discount() -> DiscountStrategy:
+    print("Discount Options:")
+    for option, (label, _) in DISCOUNT_OPTIONS.items():
+        print(f"{option}. {label}")
+    choice = get_valid_choice("Choose discount (1-4): ", list(DISCOUNT_OPTIONS.keys()))
+    return DISCOUNT_OPTIONS[choice][1]
 
  
 def print_menu() -> None:
