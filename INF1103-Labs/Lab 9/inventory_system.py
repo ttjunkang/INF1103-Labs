@@ -39,6 +39,19 @@ def get_valid_float(prompt: str) -> float:
             print("Error: Please enter a valid number.")
 
 
+# Keeps asking until the user enters a number greater than 0
+def get_positive_float(prompt: str) -> float:
+    while True:
+        try:
+            value = float(input(prompt))
+            if value <= 0:
+                print("Please enter a number greater than zero.")
+                continue
+            return value
+        except ValueError:
+            print("Please enter a valid number, e.g. 12.50")
+
+
 def get_valid_int(prompt: str) -> int:
     while True:
         raw = input(prompt).strip()
@@ -140,7 +153,7 @@ def add_product_menu(inventory: Inventory) -> None:
         return
  
     name = input("Product Name: ").strip()
-    price = get_valid_float("Price: ")
+    price = get_positive_float("Price: ")
     stock = get_valid_int("Stock Quantity: ")
     supplier = choose_supplier(inventory)
  
