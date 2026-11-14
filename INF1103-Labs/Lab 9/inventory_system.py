@@ -120,9 +120,13 @@ def load_inventory() -> Inventory:
 
 def save_inventory(inventory: Inventory) -> None:
     print("Saving inventory...")
-    with open(INVENTORY_FILE, "w") as f:
-        json.dump(inventory.to_list(), f, indent=4)
-    print(f"Inventory saved successfully to {INVENTORY_FILE}.")
+    try:
+        with open(INVENTORY_FILE, "w") as f:
+            json.dump(inventory.to_list(), f, indent=4)
+    except OSError:
+        print(f"Error: Could not save to {INVENTORY_FILE}. Changes were not saved.")
+    else:
+        print(f"Inventory saved successfully to {INVENTORY_FILE}.")
     print()
 
 
