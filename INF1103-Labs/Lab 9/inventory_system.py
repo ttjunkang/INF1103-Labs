@@ -236,11 +236,13 @@ def create_order_menu(inventory: Inventory) -> None:
             continue
  
         quantity = get_valid_int("Quantity: ")
-        if quantity == 0:
-            print("Error: Quantity must be at least 1.")
+        # OrderLine validates the quantity which tells the menu decides what to tell the user
+        try:
+            order.add_order_line(product, quantity)
+        except ValueError as error:
+            print(f"Error: {error}")
             continue
- 
-        order.add_order_line(product, quantity)
+
         print(f"Added {quantity} x {product.get_name()}.")
 
     if order.get_order_lines():
