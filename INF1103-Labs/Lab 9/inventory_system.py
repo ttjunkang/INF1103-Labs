@@ -307,6 +307,17 @@ def choose_discount() -> DiscountStrategy:
     return DISCOUNT_OPTIONS[choice][1]
 
  
+def load_products_menu(inventory: Inventory) -> None:
+    print("Load Products from CSV")
+    path = input(f"CSV file name (press Enter for {PRODUCTS_FILE}): ").strip()
+    if path == "":
+        path = PRODUCTS_FILE
+    supplier = choose_supplier(inventory)
+    print()
+    load_products(path, inventory, supplier)
+    print()
+
+
 def print_menu() -> None:
     print()
     print("----------- MENU -----------")
@@ -316,8 +327,9 @@ def print_menu() -> None:
     print("4. Search Product")
     print("5. Remove Product")
     print("6. Create Order")
-    print("7. Save Inventory")
-    print("8. Exit")
+    print("7. Load Products from CSV")
+    print("8. Save Inventory")
+    print("9. Exit")
     print("----------------------------")
 
 
@@ -353,15 +365,17 @@ def main() -> None:
         elif choice == "6":
             create_order_menu(inventory)
         elif choice == "7":
-            save_inventory(inventory)
+            load_products_menu(inventory)
         elif choice == "8":
+            save_inventory(inventory)
+        elif choice == "9":
             print("Saving inventory before exit...")
             save_inventory(inventory)
             print("Thank you for using Inventory Management System.")
             print("Program terminated.")
             break
         else:
-            print("Invalid option. Please choose a number from 1-8.")
+            print("Invalid option. Please choose a number from 1-9.")
 
  
  
