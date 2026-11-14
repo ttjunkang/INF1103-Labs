@@ -1,3 +1,4 @@
+import csv
 import json
 import os
 
@@ -14,6 +15,7 @@ from student_discount import StudentDiscount
 
 
 INVENTORY_FILE = "inventory.json"
+PRODUCTS_FILE = "products.csv"
 
 UNKNOWN_SUPPLIER = {"id": "S000", "name": "Unknown Supplier", "contact_email": "-"}
 
@@ -122,6 +124,36 @@ def save_inventory(inventory: Inventory) -> None:
         json.dump(inventory.to_list(), f, indent=4)
     print(f"Inventory saved successfully to {INVENTORY_FILE}.")
     print()
+
+
+# Reads products from a CSV file and creates each one through the ProductFactory
+def load_products(path: str, inventory: Inventory, supplier: Supplier) -> None:
+    try:
+        file = open(path, newline="")
+    except FileNotFoundError:
+        print(f"Products file not found: {path}")
+    else:
+        with file:
+            reader = csv.reader(file)
+            next(reader, None)  # skip the header row
+            loaded = 0
+            for row_number, row in enumerate(reader, start=2):
+                if not row:
+                    continue  # ignore blank lines
+                # Each row has its own try, so one bad row is skipped and loading carries on
+                try:
+                    product_type, product_id, name, price, stock = row
+                    product = ProductFactory.create(product_type, product_id, name, float(price), int(stock), supplier)
+                except ValueError as error:
+                    print(f"Skipped row {row_number} ({','.join(row)}): {error}")
+                    continue
+                if inventory.add_product(product):
+                    loaded += 1
+                else:
+                    print(f"Skipped row {row_number}: product ID {product_id} already exists.")
+            print(f"{loaded} products loaded.")
+    finally:
+        print("Load attempt finished.")
 
 
 # Menu actions which talk to the Inventory object not raw data
