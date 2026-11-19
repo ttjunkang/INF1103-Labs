@@ -1,0 +1,107 @@
+commit 93790cedad37271bf98bea6abd2014f877c590f8
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Thu Nov 19 19:01:49 2026 +0800
+
+    Final add automated tests for validation and error handling
+
+commit 072e488e33d8602e25f0b568705855520cf72206
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sat Nov 14 21:10:26 2026 +0800
+
+    Add automated testing for Discount strategies, Order and ProductFactory
+
+commit 219c348fc62de6fb87cc28d63c78c84348c2ffa7
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sat Nov 14 20:25:43 2026 +0800
+
+    Handle OSError when saving the inventory
+
+commit ee899fdfcf29b72049f3db68b2afb7f397cb042d
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sat Nov 14 17:48:08 2026 +0800
+
+    Add Load Products from CSV option to menu and update  Docker image
+
+commit 526284abc4d8255564c4c79c155a52c1009eea00
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sat Nov 14 17:02:10 2026 +0800
+
+    Add load_products to read products.csv
+
+commit 70b19cef9eca8004508735b0ab0928df235f1ddb
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sat Nov 14 14:27:19 2026 +0800
+
+    Add get_positive_float helper with try for price input
+
+commit 77dc44e8d602f655defbc4e867b5e802dd80c60e
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sat Nov 14 13:29:38 2026 +0800
+
+    Validate OrderLine quantity and the handle it in Create Order
+
+commit ec707cbed14c1558da5475fbb67a7855ff5da772
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sat Nov 14 01:48:42 2026 +0800
+
+    Validation for product price and stock quantity in Product
+
+commit 4b28fe1c93b72a5c7d0f3810f2991dafc6112ed6
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sat Nov 14 01:14:54 2026 +0800
+
+    Replace direct product with ProductFactory
+
+commit 9e386dba4e4fb24d84031848bb77faac88f037cd
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sat Nov 14 00:42:15 2026 +0800
+
+    Add ProductFactory to centralise product created
+
+commit 980b717e44ac82d1bcf00741a9e5b9584096a305
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Sat Nov 14 00:01:50 2026 +0800
+
+    Let user choose a discount strategy in Create Order
+
+commit db22aabdbb99d42316e12bce5dda8e40dabd1d3d
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Nov 13 23:33:04 2026 +0800
+
+    Add StudentDiscount strategy without changing Order
+
+commit f320f08777c2a002c20f37f53f5b1737b93aedd2
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Nov 13 23:06:25 2026 +0800
+
+    Use DiscountStrategy in Order with set_discount and no discount
+
+commit ca7d5a27cd39a7f5363b67f48a3953cc677be85f
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Nov 13 22:39:25 2026 +0800
+
+    Add BulkDiscount strategy
+
+commit 6b2228f649bab1df140738d402a40aea68eb8209
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Nov 13 22:28:53 2026 +0800
+
+    Add PercentageDiscount strategy
+
+commit aae7257d443a50afc93512b8e78abba25d271bdc
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Nov 13 22:27:30 2026 +0800
+
+    Move NoDiscount into its own file
+
+commit d60c43419ce79837cf7b89e643d2784937e4fcca
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Nov 13 19:23:19 2026 +0800
+
+    Add DiscountStrategy abstract class with NoDiscount strategy
+
+commit 48c19c6f9dfb4c072f3f2e54e1155c2e8b0e5a0a
+Author: Jun Kang <ttjunkang@gmail.com>
+Date:   Fri Nov 13 19:08:50 2026 +0800
+
+    Start Lab 9 from Lab 8 inventory system
