@@ -4,5 +4,6 @@ WORKDIR /app
 
 COPY *.py ./
 COPY inventory.json products.csv ./
+COPY tests/ ./tests/
 
 CMD ["python", "inventory_system.py"]
